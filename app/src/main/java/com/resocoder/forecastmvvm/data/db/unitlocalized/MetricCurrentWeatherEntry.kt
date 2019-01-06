@@ -6,7 +6,7 @@ class MetricCurrentWeatherEntry(
         @ColumnInfo(name = "tempC")
         override val temperature: Double,
 
-        @ColumnInfo(name = "condiion_text")
+        @ColumnInfo(name = "condition_text")
         override val conditionText: String,
 
         @ColumnInfo(name = "condition_icon")
