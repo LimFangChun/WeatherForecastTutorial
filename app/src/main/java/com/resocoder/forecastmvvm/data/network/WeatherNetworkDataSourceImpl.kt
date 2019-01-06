@@ -11,7 +11,7 @@ class WeatherNetworkDataSourceImpl(
 ) : WeatherNetworkDataSource {
 
     private val _downloadCurrentWeather = MutableLiveData<CurrentWeatherResponse>()
-    override val downloadCurrentWeather: LiveData<CurrentWeatherResponse>
+    override val downloadedCurrentWeather: LiveData<CurrentWeatherResponse>
         get() = _downloadCurrentWeather
 
 
