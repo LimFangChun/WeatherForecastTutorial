@@ -16,7 +16,7 @@ class MetricCurrentWeatherEntry(
         override val windSpeed: Double,
 
         @ColumnInfo(name = "windDir")
-        override val windDirection: Double,
+        override val windDirection: String,
 
         @ColumnInfo(name = "precipMm")
         override val precipitationVolume: Double,

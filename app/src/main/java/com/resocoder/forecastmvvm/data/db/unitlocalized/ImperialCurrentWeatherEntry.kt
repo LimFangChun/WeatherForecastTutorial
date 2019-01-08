@@ -16,7 +16,7 @@ class ImperialCurrentWeatherEntry(
         override val windSpeed: Double,
 
         @ColumnInfo(name = "windDir")
-        override val windDirection: Double,
+        override val windDirection: String,
 
         @ColumnInfo(name = "precipIn")
         override val precipitationVolume: Double,
