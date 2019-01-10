@@ -50,6 +50,7 @@ class CurrentWeatherFragment : ScopeFragment(), KodeinAware {
 
     private fun bindUI()= launch{
         val currentWeather = viewModel.weather.await()
+        val weatherLocation = viewModel.weatherLocation.await()
 
         //observe from live data view model
         currentWeather.observe(this@CurrentWeatherFragment, Observer {
@@ -71,6 +72,14 @@ class CurrentWeatherFragment : ScopeFragment(), KodeinAware {
             GlideApp.with(this@CurrentWeatherFragment)
                     .load("http:${it.conditionIconUrl}")
                     .into(imageView_condition_icon)
+        })
+
+        weatherLocation.observe(this@CurrentWeatherFragment, Observer {location ->
+            if(location == null){
+                return@Observer
+            }
+
+            updateLocation(location = location.name)
         })
     }
 
